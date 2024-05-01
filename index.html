@@ -90,10 +90,23 @@
 		</div>
 	</div>
 
+	<script src="js/state-data.js"></script>
+
 	<script>
 		let stateList = document.querySelector('#state-list');
 		stateList.onchange = function () {
-			console.log(this.value)
+			let selected = this.value
+			document.querySelector('#info-name').textContent = stateData[selected].name
+			document.querySelector('#info-abbreviation').textContent = stateData[selected].abbr
+			document.querySelector('#info-capitol').textContent = stateData[selected].capitol
+			document.querySelector('#info-population').textContent = stateData[selected].pop
+			document.querySelector('#info-statehood').textContent = stateData[selected].statehood
+			document.querySelector('#info-mammal').textContent = stateData[selected].mammal
+			document.querySelector('#info-bird').textContent = stateData[selected].bird
+			document.querySelector('#info-tree').textContent = stateData[selected].tree
+			document.querySelector('#info-flower').textContent = stateData[selected].flower
+			document.querySelector('#info-nickname').textContent = stateData[selected].nickname
+			document.querySelector('#info-pic').src = `img/${selected}.jpg`
 		}
 	</script>
 
